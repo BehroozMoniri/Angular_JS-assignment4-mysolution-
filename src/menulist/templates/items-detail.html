@@ -1,0 +1,16 @@
+    <!-- obj has keys category.name and obj.menu_items is a list 
+     each item in obj.menu_items has item.name and item.description and item.price_large --> 
+<div ng-controller="MenuDetailController as menuDetail">
+     <h1 >{{menuDetail.category}}</h1>
+     <ol  >
+         <li ng-repeat="item in menuDetail.items" 
+         ui-sref="menuDetail.getItemsForCategory({categoryShortName: item.short_name})">
+          Category Name:    <strong>{{ item.name }} </strong> 
+          Description: <strong>({{ item.description}})</strong>
+          Price: <strong>$({{ item.price_large}})</strong>
+         </li>
+     </ol> 
+
+</div>
+ 
+ 

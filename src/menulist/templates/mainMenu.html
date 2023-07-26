@@ -1,0 +1,28 @@
+<a ui-sref="home">Home</a> &lt; <span>List</span>
+
+<h3>List of categories</h3>
+
+
+<div class="container"  >
+   
+    <div  >
+      <div class="row">
+        <div class="form-group col-sm-3">
+
+        </div>
+        <div class="form-group narrow-button col-sm-3 col-sm-pull-1">
+
+        </div>
+      </div>
+        <div class="loader"> </div>
+        Categories:              Short Names
+            <ol  >
+                  
+                <li ng-repeat="item in menu.items"  >
+                  <!-- <a  ui-sref="menuDetail.getItemsForCategory({category: item.short_name})">       -->
+     Category Name:    <strong>{{ item.name }} </strong>---- Short Name: <strong>({{ item.short_name}})</strong>
+                    <!-- </a>  -->
+                </li>
+            </ol> 
+    </div>
+  </div>

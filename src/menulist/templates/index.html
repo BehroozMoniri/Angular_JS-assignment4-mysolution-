@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Narrow Down Your Menu Choice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="lib/jquery-3.1.0.min.js"></script>
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="src/menuapp.module.js"></script>  
+     
+        
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Rock+Salt" rel="stylesheet">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css"> 
+  </head>
+
+
+  <body ng-app="MenuApp">
+    <ui-view></ui-view>
+        <!-- Libraries -->
+        <script src="lib/angular.min.js"></script>
+        <script src="lib/angular-ui-router.min.js"></script>
+    
+        <!-- Modules -->
+        <script src="src/menulist/menulist.module.js"></script>
+    
+        <!-- Routes -->
+        <script src="src/routes.js"></script>
+    
+        <!-- 'ShoppingList' module artifacts -->
+        <script src="src/menulist/item-detail.component.js"></script>
+        <script src="src/menulist/item-detail.controller.js"></script>
+        <script src="src/menulist/menu-service.js"></script>
+        <script src="src/menulist/MenuListController.js"></script>
+        <script src="src/menulist/MenuListController.js"></script>
+    <div class="container">
+      <h1>Menu App </h1>
+      <div ng-controller="MenuController as menu">
+        <div class="row">
+          <div class="form-group col-sm-3">
+      <!--      Enter Category Short Name Here:
+            <input type="text" placeholder="search term" class="form-control" ng-model="menu.categoryShortName" > 
+             <!--ng-keyup="$event.keyCode == 13 ? menu.narrow(menu.searchTerm) : null" -->
+            
+          </div>
+          <div class="form-group narrow-button col-sm-3 col-sm-pull-1">
+            <!-- <button class="form-control btn btn-primary" ng-click="menu.getAllCategories();">
+              Get All Categories!
+            </button> -->
+
+            <!-- <button class="form-control btn btn-primary" ng-click="menu.getItemsForCategory(categoryShortName)" >
+              Get Items for Category
+          </button>   -->
+          </div>
+        </div>
+          <div class="loader"> </div>
+          Categories:              Short Names
+              <ol  >
+                    
+                  <li ng-repeat="item in menu.items" >
+                    <a  ui-sref="itemDetail({categoryShortName: item.short_name})">      
+       Category Name:    <strong>{{ item.name }} </strong>---- Short Name: <strong>({{ item.short_name}})</strong>
+                      </a> 
+                  </li>
+              </ol> 
+
+         
+<!-- <h3 ng-if="menu.list"> {{ menu.title }}</h3>
+ <div ng-if="menu.list.length==0" > 
+    <strong> Nothing found! </strong>
+</div> -->
+<!-- class="list-group-item list-group-item-danger text-center"  -->
+   <!-- <li ng-if="items.length >= 1" class="list-group-item active">
+    <span class="badge">{{menu.list.length}}</span>
+    <strong> Items containing: {{menu.searchTerm}}</strong>
+  </li> -->
+<!-- <ul  >
+  Categories: 
+ <li ng-repeat="item in menu.categoryNames" >   <!-- class="list-group-item" -->
+ <!--   <div class="row">
+      <div class="col-sm-10"> 
+        <strong>{{item}}</strong>  
+        <!-- <p style="font-style: italic;" >Description: {{item.description}}</p> 
+      </div>
+       <!-- <div class="col-sm-2 text-right"> 
+        <button ng-click="menu.removeItem($index)" class="btn btn-sm btn-default"> 
+        <!-- <button ng-click="menu.onRemove({index: $index});" class="btn btn-sm btn-default"> -->
+     <!--     <span class="glyphicon glyphicon-remove" style="color: red;"></span>
+          remove!
+        </button> 
+      </div> 
+    </div> 
+  </li>
+</ul> -->
+            <!-- <found-items
+                   items="{{menu.list}}"
+            title="{{menu.title}}"
+            on-remove="menu.removeItem"       > 
+           </found-items> -->
+      </div>
+
+    </div>
+
+  </body>
+</html>
