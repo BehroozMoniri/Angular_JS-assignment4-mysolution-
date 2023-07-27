@@ -3,12 +3,6 @@
   <head>
     <title>Narrow Down Your Menu Choice</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="lib/jquery-3.1.0.min.js"></script>
-    <script src="lib/angular.min.js"></script>
-    <script src="lib/angular-ui-router.min.js"></script>
-    <script type="text/javascript" src="src/menuapp.module.js"></script>  
-     
-        
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Rock+Salt" rel="stylesheet">
     <link rel="stylesheet" href="styles/bootstrap.min.css">
     <link rel="stylesheet" href="styles/styles.css"> 
@@ -18,6 +12,7 @@
   <body ng-app="MenuApp">
     <ui-view></ui-view>
     <!-- Libraries -->
+    <script src="lib/jquery-3.1.0.min.js"></script>
     <script src="lib/angular.min.js"></script>
     <script src="lib/angular-ui-router.min.js"></script>
 
@@ -26,8 +21,7 @@
 
     <!-- Routes -->
     <script src="src/routes.js"></script>
-    <script src="src/menuapp.module.js"></script>
-
+     
     <!--  module artifacts -->
     <script src="src/menulist/item-detail.component.js"></script>
     <script src="src/menulist/item-detail.controller.js"></script>
